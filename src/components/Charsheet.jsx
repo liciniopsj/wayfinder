@@ -1,8 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { charHeaderInitialState } from '../utils/charHeaderInitialState';
 
 function Charsheet() {
+  const [charHeader, setCharHeader] = useState(charHeaderInitialState);
+
   return (
     <div>
+      <button
+        type='button'
+        onClick={() => console.log(charHeader)}
+      >
+        Debug
+      </button>
       <header className='charHeader'>
         <label htmlFor="charHeaderCharName">
           Character Name:
