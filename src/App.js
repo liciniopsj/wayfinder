@@ -1,10 +1,10 @@
 import { Switch, Route } from 'react-router-dom';
-import Charsheet from './components/Charsheet';
+import PlaceHolder from './pages/PlaceHolder';
 
 function App() {
   return (
     <Switch>
-      <Route exact component={ Charsheet } path="/" />
+      <Route exact component={ PlaceHolder } path="/" />
     </Switch>
   );
 }
