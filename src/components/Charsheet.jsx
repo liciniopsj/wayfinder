@@ -10,8 +10,17 @@ function Charsheet() {
         </label>
         <label htmlFor="charHeaderAlignment">
           Alignment:
-        <input type="text" name="Alignment" id="charHeaderAlignment" />
-        {/* Isso vai mudar pra um select com as alignments */}
+        <select name="alignment" id="charHeaderAlignment">
+          <option value="LG">Lawful Good</option>
+          <option value="LN">Lawful Neutral</option>
+          <option value="LE">Lawful Evil</option>
+          <option value="NG">Neutral Good</option>
+          <option value="N">True Neutral</option>
+          <option value="NE">Neutral Evil</option>
+          <option value="CG">Chaotic Good</option>
+          <option value="CN">Chaotic Neutral</option>
+          <option value="CE">Chaotic Evil</option>
+        </select>
         </label>
         <label htmlFor="charHeaderPlayerName">
           Player:
