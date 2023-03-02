@@ -3,6 +3,13 @@ import { charHeaderInitialState as charInfo } from "../utils/charHeaderInitialSt
 import { charAbilityScoreInitialState as scores } from "../utils/charAbilityScoreInitialState";
 import Ability from "./Ability";
 
+import { CustomInput, SelectCustomInput } from "./Inputs";
+const MockOptions = [
+  "Casa do Caralho",
+  "Puta q o Pariu",
+  "Me cura nessa caceta aqui",
+  "Vai tomar no cu",
+];
 function Charsheet() {
   const [charHeader, setCharHeader] = useState(charInfo);
   const [abilityScores, setAbilityScores] = useState(scores);
@@ -49,6 +56,18 @@ function Charsheet() {
             <option value="CE">Chaotic Evil</option>
           </select>
         </label>
+
+        <SelectCustomInput
+          id="select"
+          label="Select de Teste"
+          value={charHeader.testSelect}
+          onChange={({ target: { value } }) =>
+            setCharHeader({ ...charHeader, testSelect: value })
+          }
+          options={MockOptions.map((opt) => (
+            <option key={opt}>{opt}</option>
+          ))}
+        />
         <label htmlFor="charHeaderPlayerName">
           Player:
           <input
@@ -233,24 +252,31 @@ function Charsheet() {
             <div>
               {Object.keys(abilityScores).map((score) => (
                 <Ability
-                  key={ score }
-                  abilityName={ score }
-                  abilityScores={ abilityScores }
-                  abilityBaseValue={ abilityScores[score] }
-                  abilityOnChange={ setAbilityScores }
+                  key={score}
+                  abilityName={score}
+                  abilityScores={abilityScores}
+                  abilityBaseValue={abilityScores[score]}
+                  abilityOnChange={setAbilityScores}
                 />
               ))}
             </div>
           </div>
-          <div className="charHealth">
-            
-          </div>
+          <div className="charHealth"></div>
         </section>
         <section>Abilities Section</section>
         <section>Skill Section</section>
         <section>Defense Stats</section>
         <section>Offensive Stats</section>
       </main>
+      <CustomInput
+        id={"teste"}
+        name="teste"
+        label="teste"
+        value={charHeader.testInput}
+        onChange={({ target: { value } }) =>
+          setCharHeader({ ...charHeader, testInput: value })
+        }
+      />
     </div>
   );
 }
