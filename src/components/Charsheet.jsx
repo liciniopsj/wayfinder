@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-import { charHeaderInitialState } from "../utils/charHeaderInitialState";
+import { charHeaderInitialState as charInfo } from "../utils/charHeaderInitialState";
+import { charAbilityScoreInitialState as scores } from "../utils/charAbilityScoreInitialState";
+import Ability from "./Ability";
 
 function Charsheet() {
-  const [charHeader, setCharHeader] = useState(charHeaderInitialState);
+  const [charHeader, setCharHeader] = useState(charInfo);
+  const [abilityScores, setAbilityScores] = useState(scores);
 
   return (
     <div>
-      <button type="button" onClick={() => console.log(charHeader)}>
+      <button
+        type="button"
+        onClick={() => console.log(charHeader, abilityScores)}
+      >
         Debug
       </button>
       <header className="charHeader">
@@ -223,7 +229,19 @@ function Charsheet() {
       <main className="charMainStats">
         <section>
           Vital Stats
-          <div className="charAbilities"></div>
+          <div className="charAbilities">
+            <div>
+              {Object.keys(abilityScores).map((score) => (
+                <Ability
+                  key={ score }
+                  abilityName={ score }
+                  abilityScores={ abilityScores }
+                  abilityBaseValue={ abilityScores[score] }
+                  abilityOnChange={ setAbilityScores }
+                />
+              ))}
+            </div>
+          </div>
           <div className="charHealth"></div>
         </section>
         <section>Abilities Section</section>
