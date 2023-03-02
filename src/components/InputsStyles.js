@@ -4,12 +4,17 @@ const InputDefault = styled.input`
   font-size: 18px;
   padding: 10px;
   margin: 10px;
-  background: papayawhip;
+  background: ${(props) => props?.bgColor || "papayawhip"};
   border: none;
   border-radius: 3px;
   ::placeholder {
     color: palevioletred;
   }
+`;
+
+const LabelDefault = styled.label`
+  color: #2c2d34;
+  position: relative;
 `;
 
 const SelectInput = styled.select`
@@ -32,4 +37,4 @@ const SelectInput = styled.select`
   }
 `;
 
-export { InputDefault, SelectInput };
+export { InputDefault, SelectInput, LabelDefault };
