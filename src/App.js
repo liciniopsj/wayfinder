@@ -1,6 +1,5 @@
 import { Switch, Route } from "react-router-dom";
 import PlaceHolder from "./pages/PlaceHolder";
-import "./App.css";
 
 function App() {
   return (
