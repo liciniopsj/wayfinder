@@ -242,7 +242,9 @@ function Charsheet() {
               ))}
             </div>
           </div>
-          <div className="charHealth"></div>
+          <div className="charHealth">
+            
+          </div>
         </section>
         <section>Abilities Section</section>
         <section>Skill Section</section>

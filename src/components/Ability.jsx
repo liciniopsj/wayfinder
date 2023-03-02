@@ -11,6 +11,7 @@ function Ability({abilityName, abilityBaseValue=10, abilityOnChange, abilityScor
         value={ abilityBaseValue }
         onChange={({target}) => abilityOnChange({ ...abilityScores, [abilityName]:target.value })}
       />
+
       <input
         type="number"
         name={ `${abilityName}Mod` }
