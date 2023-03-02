@@ -83,3 +83,7 @@ export const drBypassTypes = [
   "Chaos",
   "Law",
 ];
+
+export const skills = {
+  placeholder: "WIP",
+};
