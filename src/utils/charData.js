@@ -84,6 +84,16 @@ export const drBypassTypes = [
   "Law",
 ];
 
-export const skills = {
-  placeholder: "WIP",
-};
+export const skills = [
+  {
+    skillname: 'acrobatics',
+    classSkill: false,
+    abilityMod: 'dex',
+    abilityBonus: 0,
+    skillTotal: 0,
+    ranks: 0,
+    miscMod: 0,
+    noTraining: true,
+    description: '',
+  },
+];
