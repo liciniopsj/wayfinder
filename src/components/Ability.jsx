@@ -1,25 +1,33 @@
-import React from 'react'
+import React from "react";
+import { CustomInput } from "./Inputs";
 
-function Ability({abilityName, abilityBaseValue=10, abilityOnChange, abilityScores }) {
+function Ability({
+  abilityName,
+  abilityBaseValue = 10,
+  abilityOnChange,
+  abilityScores,
+}) {
   return (
     <div>
-      <span>{`${ (abilityName).toUpperCase() }:`}</span>
-      
-      <input
+      <span>{`${abilityName.toUpperCase()}:`}</span>
+
+      <CustomInput
         type="number"
-        name={ `${abilityName}Base` }
-        value={ abilityBaseValue }
-        onChange={({target}) => abilityOnChange({ ...abilityScores, [abilityName]:target.value })}
+        name={`${abilityName}Base`}
+        value={abilityBaseValue}
+        onChange={({ target }) =>
+          abilityOnChange({ ...abilityScores, [abilityName]: target.value })
+        }
       />
 
-      <input
+      <CustomInput
         type="number"
-        name={ `${abilityName}Mod` }
-        value={ Math.floor(((+abilityBaseValue - 10) / 2)) }
+        name={`${abilityName}Mod`}
+        value={Math.floor((+abilityBaseValue - 10) / 2)}
         readOnly
       />
     </div>
-  )
+  );
 }
 
-export default Ability
+export default Ability;

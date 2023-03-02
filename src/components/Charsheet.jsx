@@ -216,7 +216,8 @@ function Charsheet() {
               label="Current HP"
               readOnly
               value={
-                +vitalStats.hpMax - (+vitalStats.wounds + +vitalStats.woundsNonLethal)
+                +vitalStats.hpMax -
+                (+vitalStats.wounds + +vitalStats.woundsNonLethal)
               }
             />
             <CustomInput
@@ -243,13 +244,13 @@ function Charsheet() {
             />
           </div>
           <div className="charInitiative">
-          <CustomInput
+            <CustomInput
               type="number"
               id="charInitiative"
               name="initiative"
               label="Initiative"
               readOnly
-              value={ Math.floor((+abilityScores.dex - 10) / 2) }
+              value={Math.floor((+abilityScores.dex - 10) / 2)}
             />
           </div>
         </section>
