@@ -1,10 +1,11 @@
-import { Switch, Route } from 'react-router-dom';
-import PlaceHolder from './pages/PlaceHolder';
+import { Switch, Route } from "react-router-dom";
+import PlaceHolder from "./pages/PlaceHolder";
+import "./App.css";
 
 function App() {
   return (
     <Switch>
-      <Route exact component={ PlaceHolder } path="/" />
+      <Route exact component={PlaceHolder} path="/" />
     </Switch>
   );
 }
