@@ -2,7 +2,7 @@ import React from "react";
 
 import { InputDefault, SelectInput } from "./InputsStyles";
 
-export function CustomInput({ label, type, id, value, onChange, readOnly }) {
+export function CustomInput({ label, type, id, value, onChange, readOnly, min }) {
   return (
     <label htmlFor={id}>
       {label}
@@ -12,6 +12,7 @@ export function CustomInput({ label, type, id, value, onChange, readOnly }) {
         value={value}
         onChange={onChange}
         readOnly={readOnly}
+        min={min}
       />
     </label>
   );
