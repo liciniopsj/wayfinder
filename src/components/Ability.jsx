@@ -1,5 +1,5 @@
 import React from "react";
-import { charAbilityScoreInitialState as charScores } from "../utils/charAbilityScoreInitialState";
+import { charAbilityScoreInitialState as charScores } from "../utils/charData";
 import { CustomInput } from "./Inputs";
 
 function Ability({ abilityScores = { charScores }, setAbilityScores }) {

@@ -1,6 +1,6 @@
 import React from "react";
 import { CustomInput, SelectCustomInput } from "./Inputs";
-import { drBypassTypes } from "../utils/drBypassTypes";
+import { drBypassTypes } from "../utils/charData";
 
 function CharResistances({vitalStats, setVitalStats}) {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { CustomInput } from "./Inputs";
-import { healthInitialState } from "../utils/healthInitialState";
+import { healthInitialState } from "../utils/charData";
 
 
 function Charhealth({ vitalStats = { healthInitialState }, setVitalStats }) {

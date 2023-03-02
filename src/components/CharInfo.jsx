@@ -1,6 +1,6 @@
 import React from "react";
 import { CustomInput, SelectCustomInput } from "./Inputs";
-import { alignments } from "../utils/alignment";
+import { alignments } from "../utils/charData";
 
 function CharInfo({charHeader, setCharHeader}) {
   return (

@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { charHeaderInitialState as charInfo } from "../utils/charHeaderInitialState";
-import { charAbilityScoreInitialState as scores } from "../utils/charAbilityScoreInitialState";
-import { healthInitialState as vitals } from "../utils/healthInitialState";
-import { alignments } from "../utils/alignment";
-import Ability from "./Ability";
 import { CustomInput } from "./Inputs";
+import {
+  charHeaderInitialState as charInfo,
+  alignments,
+  charAbilityScoreInitialState as scores,
+  healthInitialState as vitals,
+} from "../utils/charData";
+import Ability from "./Ability";
 import Charhealth from "./Charhealth";
 import CharResistances from "./CharResistances";
 import CharInfo from "./CharInfo";
+import CharDefenses from "./CharDefenses";
 
 function Charsheet() {
   const [charHeader, setCharHeader] = useState(charInfo);
@@ -30,18 +33,10 @@ function Charsheet() {
       <main>
         <section className="charMainStats">
           <div className="charAbilities">
-            <div>
-              {/* {Object.keys(abilityScores).map((score) => (
-                <Ability
-                  key={score}
-                  abilityName={score}
-                  abilityScores={abilityScores}
-                  abilityBaseValue={abilityScores[score]}
-                  abilityOnChange={setAbilityScores}
-                />
-              ))} */}
-              <Ability abilityScores={abilityScores} setAbilityScores={setAbilityScores} />
-            </div>
+            <Ability
+              abilityScores={abilityScores}
+              setAbilityScores={setAbilityScores}
+            />
           </div>
           <div className="charHealthContainer">
             <Charhealth vitalStats={vitalStats} setVitalStats={setVitalStats} />
@@ -57,11 +52,16 @@ function Charsheet() {
             />
           </div>
           <div className="charResistancesContainer">
-            <CharResistances vitalStats={vitalStats} setVitalStats={setVitalStats} />
+            <CharResistances
+              vitalStats={vitalStats}
+              setVitalStats={setVitalStats}
+            />
           </div>
         </section>
+        <section>
+          <CharDefenses />
+        </section>
         <section>Skill Section</section>
-        <section>Defense Stats</section>
         <section>Offensive Stats</section>
       </main>
     </div>
