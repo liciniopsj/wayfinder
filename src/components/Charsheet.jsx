@@ -220,11 +220,13 @@ function Charsheet() {
           />
         </label>
       </header>
-      <section>Vital Stats</section>
-      <section>Abilities Section</section>
-      <section>Skill Section</section>
-      <section>Defense Stats</section>
-      <section>Offensive Stats</section>
+      <main>
+        <section>Vital Stats</section>
+        <section>Abilities Section</section>
+        <section>Skill Section</section>
+        <section>Defense Stats</section>
+        <section>Offensive Stats</section>
+      </main>
     </div>
   );
 }
