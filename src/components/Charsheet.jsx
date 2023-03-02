@@ -74,7 +74,7 @@ function Charsheet() {
           type="number"
           id="charHeaderCharLevel"
           name="charLevel"
-          label="Character Class:"
+          label="Level:"
           value={charHeader.level}
           onChange={({ target: { value } }) =>
             setCharHeader({ ...charHeader, level: value })
