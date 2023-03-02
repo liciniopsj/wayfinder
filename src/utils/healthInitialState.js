@@ -6,4 +6,5 @@ export const healthInitialState = {
   initiative: 0,
   DR: 0,
   SR: 0,
+  drBypass: "",
 }

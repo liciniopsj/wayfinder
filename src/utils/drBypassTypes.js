@@ -1,0 +1,1 @@
+export const drBypassTypes = ["--", "Magic", "Cold Iron", "Bludgeoning", "Piercing", "Slashing", "Epic", "Adamantine", "Silver", "Good", "Evil", "Chaos", "Law"]
