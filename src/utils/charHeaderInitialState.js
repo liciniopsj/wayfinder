@@ -1,8 +1,8 @@
 export const charHeaderInitialState = {
   name: '',
-  alignment: '',
+  alignment: 'LG',
   player: '',
-  campaing: '',
+  campaign: '',
   class: '',
   level: 1,
   race: '',

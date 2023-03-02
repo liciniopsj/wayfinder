@@ -24,6 +24,16 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "src/index.js",
+      "serviceWorker.js",
+      "src/fakes",
+      "src/routes",
+      "src/hooks",
+      "src/tests"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
