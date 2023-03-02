@@ -4,7 +4,6 @@ import { charAbilityScoreInitialState as scores } from "../utils/charAbilityScor
 import { healthInitialState as vitals } from "../utils/healthInitialState";
 import { alignments } from "../utils/alignment";
 import Ability from "./Ability";
-
 import { CustomInput } from "./Inputs";
 import Charhealth from "./Charhealth";
 import CharResistances from "./CharResistances";
@@ -32,7 +31,7 @@ function Charsheet() {
         <section className="charMainStats">
           <div className="charAbilities">
             <div>
-              {Object.keys(abilityScores).map((score) => (
+              {/* {Object.keys(abilityScores).map((score) => (
                 <Ability
                   key={score}
                   abilityName={score}
@@ -40,7 +39,8 @@ function Charsheet() {
                   abilityBaseValue={abilityScores[score]}
                   abilityOnChange={setAbilityScores}
                 />
-              ))}
+              ))} */}
+              <Ability abilityScores={abilityScores} setAbilityScores={setAbilityScores} />
             </div>
           </div>
           <div className="charHealthContainer">
