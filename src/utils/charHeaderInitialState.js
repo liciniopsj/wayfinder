@@ -17,6 +17,4 @@ export const charHeaderInitialState = {
   metricWeight: 0,
   hair: "",
   eyes: "",
-  testInput: "",
-  testSelect: "",
 };
