@@ -220,8 +220,12 @@ function Charsheet() {
           />
         </label>
       </header>
-      <main>
-        <section>Vital Stats</section>
+      <main className="charMainStats">
+        <section>
+          Vital Stats
+          <div className="charAbilities"></div>
+          <div className="charHealth"></div>
+        </section>
         <section>Abilities Section</section>
         <section>Skill Section</section>
         <section>Defense Stats</section>
