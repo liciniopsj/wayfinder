@@ -10,6 +10,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -22,6 +23,16 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "src/index.js",
+      "serviceWorker.js",
+      "src/fakes",
+      "src/routes",
+      "src/hooks",
+      "src/tests"
     ]
   },
   "browserslist": {

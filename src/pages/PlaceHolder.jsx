@@ -1,8 +1,11 @@
 import React from 'react'
+import Charsheet from '../components/Charsheet'
 
 function PlaceHolder() {
   return (
-    <div>PlaceHolder</div>
+    <div>
+      <Charsheet/>
+    </div>
   )
 }
 
