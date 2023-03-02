@@ -15,7 +15,7 @@ export function SelectCustomInput({ id, label, value, onChange, options }) {
   return (
     <label htmlFor={id}>
       {label}
-      <SelectInput value={value} onChange={onChange}>
+      <SelectInput value={value} id={id} onChange={onChange}>
         {options}
       </SelectInput>
     </label>
