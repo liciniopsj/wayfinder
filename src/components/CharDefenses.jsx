@@ -6,13 +6,6 @@ function CharDefenses({defenses, abilityScores , abilityMod = "dexMod"}) {
   defenses.ac = 10 + +defenses.abilityMod + +defenses.armorBonus + +defenses.shieldBonus + +defenses.sizeMod + +defenses.natArmor + +defenses.deflectMod + +defenses.miscMod;
   return (
     <div>
-      <h4>
-      Defense Stats:
-      </h4>
-      <p>AC = 10 + abilityMod + armorBonus + shieldbonus + sizeMod + natArmor + deflectMod + miscMod</p>
-      <p>TouchAc: AC - armorBonus - shieldBonus - natArmor</p>
-      <p>Flat-footed AC: AC - DexMod - Dodge</p>
-
       <div>
         <CustomInput
           type="number"
