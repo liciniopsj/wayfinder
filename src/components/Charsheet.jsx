@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { charHeaderInitialState as charInfo } from "../utils/charHeaderInitialState";
 import { charAbilityScoreInitialState as scores } from "../utils/charAbilityScoreInitialState";
+
+import { alignments } from "../utils/alignment";
 import Ability from "./Ability";
 
 import { CustomInput, SelectCustomInput } from "./Inputs";
-const MockOptions = [
-  "Casa do Caralho",
-  "Puta q o Pariu",
-  "Me cura nessa caceta aqui",
-  "Vai tomar no cu",
-];
+
 function Charsheet() {
   const [charHeader, setCharHeader] = useState(charInfo);
   const [abilityScores, setAbilityScores] = useState(scores);
@@ -18,11 +15,20 @@ function Charsheet() {
     <div>
       <button
         type="button"
-        onClick={() => console.log(charHeader, abilityScores)}
+        onClick={() => console.log(charHeader, abilityScores, alignments)}
       >
         Debug
       </button>
       <header className="charHeader">
+        <CustomInput
+          id={"teste"}
+          name="teste"
+          label="teste"
+          value={charHeader.testInput}
+          onChange={({ target: { value } }) =>
+            setCharHeader({ ...charHeader, testInput: value })
+          }
+        />
         <label htmlFor="charHeaderCharName">
           Character Name:
           <input
@@ -35,7 +41,7 @@ function Charsheet() {
             value={charHeader.name}
           />
         </label>
-        <label htmlFor="charHeaderAlignment">
+        {/* <label htmlFor="charHeaderAlignment">
           Alignment:
           <select
             name="alignment"
@@ -55,17 +61,18 @@ function Charsheet() {
             <option value="CN">Chaotic Neutral</option>
             <option value="CE">Chaotic Evil</option>
           </select>
-        </label>
-
+        </label> */}
         <SelectCustomInput
           id="select"
           label="Select de Teste"
-          value={charHeader.testSelect}
+          value={charHeader.alignment}
           onChange={({ target: { value } }) =>
-            setCharHeader({ ...charHeader, testSelect: value })
+            setCharHeader({ ...charHeader, alignment: value })
           }
-          options={MockOptions.map((opt) => (
-            <option key={opt}>{opt}</option>
+          options={Object.values(alignments).map((value, index) => (
+            <option key={value} value={Object.keys(alignments)[index]}>
+              {value}
+            </option>
           ))}
         />
         <label htmlFor="charHeaderPlayerName">
@@ -268,15 +275,6 @@ function Charsheet() {
         <section>Defense Stats</section>
         <section>Offensive Stats</section>
       </main>
-      <CustomInput
-        id={"teste"}
-        name="teste"
-        label="teste"
-        value={charHeader.testInput}
-        onChange={({ target: { value } }) =>
-          setCharHeader({ ...charHeader, testInput: value })
-        }
-      />
     </div>
   );
 }
