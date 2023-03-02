@@ -9,17 +9,22 @@ function Ability({ abilityScores = { charScores }, setAbilityScores }) {
   abilityScores.intMod = Math.floor((+abilityScores.int - 10) / 2);
   abilityScores.wisMod = Math.floor((+abilityScores.wis - 10) / 2);
   abilityScores.chaMod = Math.floor((+abilityScores.cha - 10) / 2);
+
+  const handleChange = ({ name, value }) => {
+    setAbilityScores({ ...abilityScores, [name]: value})
+  };
+
   return (
     <div>
       <CustomInput
         type="number"
         id="charStrBase"
-        name="strBase"
+        name="str"
         label="STR"
         min={0}
         value={abilityScores.str}
-        onChange={({ target: { value } }) =>
-          setAbilityScores({ ...abilityScores, str: value })
+        onChange={({ target }) =>
+          handleChange(target)
         }
       />
 
@@ -28,12 +33,12 @@ function Ability({ abilityScores = { charScores }, setAbilityScores }) {
       <CustomInput
         type="number"
         id="charDexBase"
-        name="dexBase"
+        name="dex"
         label="DEX"
         min={0}
         value={abilityScores.dex}
-        onChange={({ target: { value } }) =>
-          setAbilityScores({ ...abilityScores, dex: value })
+        onChange={({ target }) =>
+          handleChange(target)
         }
       />
 
@@ -42,12 +47,12 @@ function Ability({ abilityScores = { charScores }, setAbilityScores }) {
       <CustomInput
         type="number"
         id="charConBase"
-        name="conBase"
+        name="con"
         label="CON"
         min={0}
         value={abilityScores.con}
-        onChange={({ target: { value } }) =>
-          setAbilityScores({ ...abilityScores, con: value })
+        onChange={({ target }) =>
+          handleChange(target)
         }
       />
 
@@ -56,12 +61,12 @@ function Ability({ abilityScores = { charScores }, setAbilityScores }) {
       <CustomInput
         type="number"
         id="charIntBase"
-        name="intBase"
+        name="int"
         label="INT"
         min={0}
         value={abilityScores.int}
-        onChange={({ target: { value } }) =>
-          setAbilityScores({ ...abilityScores, int: value })
+        onChange={({ target }) =>
+          handleChange(target)
         }
       />
 
@@ -70,12 +75,12 @@ function Ability({ abilityScores = { charScores }, setAbilityScores }) {
       <CustomInput
         type="number"
         id="charWisBase"
-        name="wisBase"
+        name="wis"
         label="WIS"
         min={0}
         value={abilityScores.wis}
-        onChange={({ target: { value } }) =>
-          setAbilityScores({ ...abilityScores, wis: value })
+        onChange={({ target }) =>
+          handleChange(target)
         }
       />
 
@@ -84,12 +89,12 @@ function Ability({ abilityScores = { charScores }, setAbilityScores }) {
       <CustomInput
         type="number"
         id="charChaBase"
-        name="chaBase"
+        name="cha"
         label="CHA"
         min={0}
         value={abilityScores.cha}
-        onChange={({ target: { value } }) =>
-          setAbilityScores({ ...abilityScores, cha: value })
+        onChange={({ target }) =>
+          handleChange(target)
         }
       />
 

@@ -5,6 +5,7 @@ import {
   alignments,
   charAbilityScoreInitialState as scores,
   healthInitialState as vitals,
+  charDefenses
 } from "../utils/charData";
 import Ability from "./Ability";
 import Charhealth from "./Charhealth";
@@ -16,13 +17,18 @@ function Charsheet() {
   const [charHeader, setCharHeader] = useState(charInfo);
   const [abilityScores, setAbilityScores] = useState(scores);
   const [vitalStats, setVitalStats] = useState(vitals);
+  const [defenses, setDefenses] = useState(charDefenses);
+
+  // const handleChange = () => {
+
+  // };
 
   return (
     <div>
       <button
         type="button"
         onClick={() =>
-          console.log(charHeader, abilityScores, alignments, vitalStats)
+          console.log(charHeader, abilityScores, alignments, vitalStats, defenses)
         }
       >
         Debug
@@ -59,7 +65,7 @@ function Charsheet() {
           </div>
         </section>
         <section>
-          <CharDefenses />
+          <CharDefenses defenses={defenses} setDefenses={setDefenses} abilityScores={abilityScores} />
         </section>
         <section>Skill Section</section>
         <section>Offensive Stats</section>

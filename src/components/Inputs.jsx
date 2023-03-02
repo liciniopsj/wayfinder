@@ -2,13 +2,14 @@ import React from "react";
 
 import { InputDefault, SelectInput } from "./InputsStyles";
 
-export function CustomInput({ label, type, id, value, onChange, readOnly, min }) {
+export function CustomInput({ label, type, id, value, onChange, readOnly, min, name }) {
   return (
     <label htmlFor={id}>
       {label}
       <InputDefault
         type={type}
         id={id}
+        name={name}
         value={value}
         onChange={onChange}
         readOnly={readOnly}
