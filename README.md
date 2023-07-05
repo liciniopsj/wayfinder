@@ -1,2 +1,2 @@
 # wayfinder
-A Companion for the TTRPG Pathfinder 1e.
+An exercise on creating frontend components with a trpg theme
